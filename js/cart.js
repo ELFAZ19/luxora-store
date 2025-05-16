@@ -169,3 +169,60 @@ function updateCartUI() {
     cartBadge.textContent = totalItems;
   }
 }
+
+// Utility to update cart icon badge
+export function updateCartBadge() {
+  const cartBtn = document.getElementById("cart-btn");
+  if (!cartBtn) return;
+  const badge = cartBtn.querySelector(".badge");
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  badge.textContent = cart.reduce((sum, item) => sum + (item.qty || 1), 0);
+}
+
+// Listen for cart changes from anywhere
+window.addEventListener("storage", (e) => {
+  if (e.key === "cart") updateCartBadge();
+});
+
+// Call on load
+updateCartBadge();
+
+export function renderCartSidebar() {
+  const sidebar = document.querySelector('.cart-sidebar');
+  const itemsContainer = sidebar?.querySelector('.cart-items');
+  const totalContainer = sidebar?.querySelector('.cart-total span');
+  if (!sidebar || !itemsContainer) return;
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  itemsContainer.innerHTML = '';
+  let total = 0;
+  cart.forEach(item => {
+    const itemDiv = document.createElement('div');
+    itemDiv.className = 'cart-item';
+    itemDiv.innerHTML = `
+      <img src="assets/images/products/${item.image}" class="cart-item-img" alt="${item.name}">
+      <div class="cart-item-info">
+        <div class="cart-item-title">${item.name}</div>
+        <div class="cart-item-qty">Qty: ${item.qty}</div>
+        <div class="cart-item-qty">Price: $${item.price}</div>
+      </div>
+      <button class="cart-item-remove" title="Remove">&times;</button>
+    `;
+    itemDiv.querySelector('.cart-item-remove').onclick = () => {
+      cart = cart.filter(c => c.id !== item.id);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCartSidebar();
+      updateCartBadge();
+    };
+    itemsContainer.appendChild(itemDiv);
+    total += (item.price * item.qty);
+  });
+  if (totalContainer) totalContainer.textContent = `$${total.toFixed(2)}`;
+}
+
+// Update cart sidebar on cart change
+window.addEventListener('storage', (e) => {
+  if (e.key === 'cart') renderCartSidebar();
+});
+
+// Call on load
+renderCartSidebar();

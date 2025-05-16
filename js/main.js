@@ -6,7 +6,7 @@ import {
 } from "./utils.js";
 import { loadProducts, setupShopFilters } from "./products.js";
 import { setupSearch } from "./search.js";
-import { setupCart } from "./cart.js";
+import { setupCart, updateCartBadge } from "./cart.js";
 
 // Initialize the app
 async function init() {
@@ -15,6 +15,7 @@ async function init() {
   setupSearch();
   setupCart();
   setupSearch();
+  updateCartBadge();
 
   // Theme toggle
   const themeToggle = document.getElementById("theme-toggle");
