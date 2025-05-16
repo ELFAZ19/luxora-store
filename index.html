@@ -8,16 +8,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">LUXORA</div>
+            <a href="index.html" class="logo">LUXORA</a>
             <div class="nav-links">
-                <a href="#" class="nav-link active">Home</a>
-                <a href="#" class="nav-link">Shop</a>
-                <a href="#" class="nav-link">Categories</a>
-                <a href="#" class="nav-link">About</a>
-                <a href="#" class="nav-link">Contact</a>
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="shop.html" class="nav-link">Shop</a>
+                <a href="categories.html" class="nav-link">Categories</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
             </div>
             <div class="nav-icons">
                 <button id="search-btn"><i class="fas fa-search"></i></button>
@@ -34,55 +34,158 @@
             <button><i class="fas fa-search"></i></button>
         </div>
     </nav>
-
+    
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>New Collection 2023</h1>
             <p>Discover our premium selection of elegant products</p>
-            <button class="btn-primary">Shop Now</button>
+            <a href="shop.html" class="btn-primary">Shop Now</a>
         </div>
     </section>
 
-    <!-- Main Content -->
-    <main class="container">
-        <!-- Filters Section -->
-        <section class="filters">
-            <div class="search-filter">
-                <input type="text" id="search-input" placeholder="Search products...">
-            </div>
-            <div class="category-filter">
-                <button class="category-btn active" data-category="all">All</button>
-                <button class="category-btn" data-category="men">Men</button>
-                <button class="category-btn" data-category="women">Women</button>
-                <button class="category-btn" data-category="electronics">Electronics</button>
-                <button class="category-btn" data-category="home">Home</button>
-            </div>
-            <div class="price-filter">
-                <label for="price-range">Price Range: <span id="price-value">$0 - $1000</span></label>
-                <input type="range" id="price-range" min="0" max="1000" value="1000">
-            </div>
-            <div class="sort-filter">
-                <select id="sort-by">
-                    <option value="default">Sort By</option>
-                    <option value="price-asc">Price: Low to High</option>
-                    <option value="price-desc">Price: High to Low</option>
-                    <option value="name-asc">Name: A-Z</option>
-                    <option value="name-desc">Name: Z-A</option>
-                    <option value="rating">Rating</option>
-                </select>
-            </div>
-        </section>
+    <!-- Featured Categories -->
+    <section class="featured-categories container">
+        <h2 class="section-title">Shop by Category</h2>
+        <div class="categories-grid">
+            <a href="categories.html#men" class="category-card">
+                <img src="assets/images/men-category.jpg" alt="Men's Collection">
+                <h3>Men's Collection</h3>
+            </a>
+            <a href="categories.html#women" class="category-card">
+                <img src="assets/images/women-category.jpg" alt="Women's Collection">
+                <h3>Women's Collection</h3>
+            </a>
+            <a href="categories.html#electronics" class="category-card">
+                <img src="assets/images/electronics-category.jpg" alt="Electronics">
+                <h3>Electronics</h3>
+            </a>
+            <a href="categories.html#home" class="category-card">
+                <img src="assets/images/home-category.jpg" alt="Home & Living">
+                <h3>Home & Living</h3>
+            </a>
+        </div>
+    </section>
 
-        <!-- Products Grid -->
-        <section class="products-grid">
-            <!-- Products will be dynamically inserted here -->
-            <div class="skeleton-loading">
-                <!-- Loading skeletons will appear here while products load -->
-            </div>
-        </section>
-    </main>
+    <!-- Featured Products -->
+    <section class="featured-products container">
+        <h2 class="section-title">Featured Products</h2>
+        <div class="products-grid">
+            <!-- Products will be dynamically loaded -->
+        </div>
+        <div class="text-center">
+            <a href="shop.html" class="btn-primary">View All Products</a>
+        </div>
+    </section>
 
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial active">
+                    <p>"The quality of Luxora products is exceptional. I'm thoroughly impressed with my purchase!"</p>
+                    <div class="testimonial-author">
+                        <img src="assets/images/customer1.jpg" alt="Sarah J.">
+                        <div>
+                            <h4>Sarah J.</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"Fast shipping and excellent customer service. Will definitely shop here again!"</p>
+                    <div class="testimonial-author">
+                        <img src="assets/images/customer2.jpg" alt="Michael T.">
+                        <div>
+                            <h4>Michael T.</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-controls">
+                <button class="prev-testimonial"><i class="fas fa-chevron-left"></i></button>
+                <button class="next-testimonial"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+        <div class="container">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Get the latest updates on new products and upcoming sales</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit" class="btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="shop.html">All Products</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Sale Items</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">Size Guide</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+                <p>Subscribe to our newsletter</p>
+                <div class="newsletter">
+                    <input type="email" placeholder="Your email">
+                    <button class="btn-secondary">Subscribe</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Luxora. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Cart & Wishlist Sidebars -->
     <!-- Cart Sidebar -->
     <aside class="cart-sidebar">
         <div class="cart-header">
@@ -122,66 +225,6 @@
             </div>
         </div>
     </aside>
-
-    <!-- Quick View Modal -->
-    <div class="quick-view-modal">
-        <div class="modal-content">
-            <button class="close-modal"><i class="fas fa-times"></i></button>
-            <div class="modal-body">
-                <!-- Product details will be dynamically inserted here -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-section">
-                <h4>Shop</h4>
-                <ul>
-                    <li><a href="#">All Products</a></li>
-                    <li><a href="#">Featured</a></li>
-                    <li><a href="#">New Arrivals</a></li>
-                    <li><a href="#">Sale Items</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>About</h4>
-                <ul>
-                    <li><a href="#">Our Story</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Customer Service</h4>
-                <ul>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">FAQs</a></li>
-                    <li><a href="#">Shipping & Returns</a></li>
-                    <li><a href="#">Size Guide</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Connect With Us</h4>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-pinterest"></i></a>
-                </div>
-                <p>Subscribe to our newsletter</p>
-                <div class="newsletter">
-                    <input type="email" placeholder="Your email">
-                    <button class="btn-secondary">Subscribe</button>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Luxora by ELFAZ19. All rights reserved.</p>
-        </div>
-    </footer>
 
     <script src="script.js"></script>
 </body>
