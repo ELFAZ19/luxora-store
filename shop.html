@@ -10,7 +10,29 @@
 </head>
 <body>
     <!-- Navigation -->
-    <!-- Include navigation.html here -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">LUXORA</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="shop.html" class="nav-link">Shop</a>
+                <a href="categories.html" class="nav-link">Categories</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-icons">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+                <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+                <button id="wishlist-btn"><i class="fas fa-heart"></i><span class="badge">0</span></button>
+                <button id="cart-btn"><i class="fas fa-shopping-cart"></i><span class="badge">0</span></button>
+                <button id="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+        <div class="mobile-search">
+            <input type="text" placeholder="Search products..." id="mobile-search-input">
+            <button id="mobile-search-btn"><i class="fas fa-search"></i></button>
+        </div>
+    </nav>
 
     <!-- Shop Header -->
     <section class="shop-header">
@@ -86,10 +108,75 @@
     </main>
 
     <!-- Footer -->
-    <!-- Include footer.html here -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="shop.html">All Products</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Sale Items</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">Size Guide</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+                <p>Subscribe to our newsletter</p>
+                <div class="newsletter">
+                    <input type="email" placeholder="Your email" id="newsletter-email">
+                    <button class="btn-secondary" id="newsletter-submit">Subscribe</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Luxora. All rights reserved.</p>
+        </div>
+    </footer>
 
     <!-- Cart Sidebar -->
-    <!-- Include from index.html -->
+    <aside class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button id="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items">
+            <!-- Cart items will be loaded dynamically -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <p>Total: <span>$0.00</span></p>
+            </div>
+            <div class="promo-code">
+                <input type="text" placeholder="Enter promo code">
+                <button class="btn-secondary">Apply</button>
+            </div>
+            <button class="btn-primary checkout-btn">Proceed to Checkout</button>
+        </div>
+    </aside>
 
     <script type="module" src="js/main.js"></script>
 </body>
