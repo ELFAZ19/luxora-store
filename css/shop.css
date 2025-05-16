@@ -1,0 +1,240 @@
+/* Shop Header */
+.shop-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.shop-header h1 {
+    margin-bottom: 0.5rem;
+}
+
+.breadcrumb {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: white;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb span {
+    opacity: 0.7;
+}
+
+/* Shop Main */
+.shop-main {
+    display: flex;
+    gap: 2rem;
+    padding: 3rem 0;
+}
+
+/* Filters */
+.shop-filters {
+    width: 250px;
+    flex-shrink: 0;
+}
+
+.filter-section {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.filter-section h3 {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.filter-list {
+    list-style: none;
+}
+
+.filter-list li {
+    margin-bottom: 0.5rem;
+}
+
+.filter-list a {
+    text-decoration: none;
+    color: var(--text-color);
+    display: block;
+    padding: 0.5rem 0;
+}
+
+.filter-list a:hover,
+.filter-list a.active {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Price Range */
+.price-range {
+    margin-top: 1rem;
+}
+
+.price-range input[type="range"] {
+    width: 100%;
+    height: 6px;
+    -webkit-appearance: none;
+    background: var(--border-color);
+    border-radius: 3px;
+    outline: none;
+}
+
+.price-range input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.price-values {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--light-text);
+}
+
+/* Sort Filter */
+#sort-filter {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.25rem;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+.apply-filters,
+.reset-filters {
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+/* Products Grid */
+.shop-products {
+    flex: 1;
+}
+
+.products-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+#products-count {
+    font-weight: 600;
+}
+
+.view-options {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.view-option {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.view-option.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* List View */
+.products-grid.list-view {
+    display: block;
+}
+
+.products-grid.list-view .product-card {
+    display: flex;
+    max-width: 100%;
+    margin-bottom: 1rem;
+}
+
+.products-grid.list-view .product-img {
+    width: 200px;
+    height: 200px;
+}
+
+.products-grid.list-view .product-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.products-grid.list-view .product-actions {
+    margin-top: 1rem;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.page-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border-color);
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.page-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.page-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .shop-main {
+        flex-direction: column;
+    }
+    
+    .shop-filters {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .products-grid.list-view .product-card {
+        flex-direction: column;
+    }
+    
+    .products-grid.list-view .product-img {
+        width: 100%;
+    }
+}
