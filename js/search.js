@@ -1,32 +1,31 @@
-import { filterProducts } from "./products.js";
-
-let currentSearch = "";
-
 export function setupSearch() {
-  // Desktop search
   const searchInput = document.getElementById("search-input");
+  const mobileSearchInput = document.getElementById("mobile-search-input");
+
   if (searchInput) {
     searchInput.addEventListener("input", (e) => {
-      currentSearch = e.target.value.trim().toLowerCase();
-      filterProducts();
+      const searchTerm = e.target.value.toLowerCase();
+      filterProductsBySearch(searchTerm);
     });
   }
 
-  // Mobile search
-  const mobileSearchInput = document.getElementById("mobile-search-input");
-  const mobileSearchBtn = document.getElementById("mobile-search-btn");
-
-  if (mobileSearchInput && mobileSearchBtn) {
-    mobileSearchInput.addEventListener("keypress", (e) => {
-      if (e.key === "Enter") {
-        currentSearch = mobileSearchInput.value.trim().toLowerCase();
-        filterProducts();
-      }
-    });
-
-    mobileSearchBtn.addEventListener("click", () => {
-      currentSearch = mobileSearchInput.value.trim().toLowerCase();
-      filterProducts();
+  if (mobileSearchInput) {
+    mobileSearchInput.addEventListener("input", (e) => {
+      const searchTerm = e.target.value.toLowerCase();
+      filterProductsBySearch(searchTerm);
     });
   }
+}
+
+function filterProductsBySearch(term) {
+  if (term.length === 0) {
+    filteredProducts = [...products];
+  } else {
+    filteredProducts = products.filter(
+      (product) =>
+        product.name.toLowerCase().includes(term) ||
+        product.description.toLowerCase().includes(term)
+    );
+  }
+  filterProducts(); // This will apply all active filters including search
 }

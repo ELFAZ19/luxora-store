@@ -4,16 +4,17 @@ import {
   setupMobileMenu,
   showNotification,
 } from "./utils.js";
-import { loadProducts, filterProducts, renderProducts } from "./products.js";
+import { loadProducts, setupShopFilters } from "./products.js";
 import { setupSearch } from "./search.js";
 import { setupCart } from "./cart.js";
 
 // Initialize the app
-function init() {
+async function init() {
   loadTheme();
   setupMobileMenu();
   setupSearch();
   setupCart();
+  setupSearch();
 
   // Theme toggle
   const themeToggle = document.getElementById("theme-toggle");
@@ -22,11 +23,11 @@ function init() {
   }
 
   // Load products if on a page that needs them
-  if (
-    document.querySelector(".products-grid") ||
-    document.querySelector(".featured-products")
-  ) {
-    loadProducts();
+  if (document.querySelector(".shop-main")) {
+    await loadProducts();
+    setupShopFilters();
+  } else if (document.querySelector(".featured-products")) {
+    await loadProducts();
   }
 
   // Newsletter form
