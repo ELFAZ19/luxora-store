@@ -438,12 +438,18 @@
   font-size: 1rem;
   outline: none;
   background: #fff;
-  color: var(--text-color, #222);
+  color: #222 !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   transition: border 0.2s, box-shadow 0.2s;
   width: 220px;
   max-width: 100%;
 }
+
+#search-input::placeholder {
+  color: #888 !important;
+  opacity: 1;
+}
+
 #search-input:focus {
   border-color: var(--primary-color, #5e72e4);
   box-shadow: 0 4px 16px rgba(94, 114, 228, 0.1);
