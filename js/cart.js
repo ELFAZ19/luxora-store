@@ -1,3 +1,11 @@
+/*
+     Project: Notes App
+     Author: Yabsira Dejene
+     GitHub: https://github.com/ELFAZ19
+     LinkedIn: https://linkedin.com/in/yabsiradejene
+     © 2025 Yabsira Dejene. All rights reserved.
+*/
+
 import { showNotification } from "./utils.js";
 
 export function setupCart() {
@@ -188,16 +196,16 @@ window.addEventListener("storage", (e) => {
 updateCartBadge();
 
 export function renderCartSidebar() {
-  const sidebar = document.querySelector('.cart-sidebar');
-  const itemsContainer = sidebar?.querySelector('.cart-items');
-  const totalContainer = sidebar?.querySelector('.cart-total span');
+  const sidebar = document.querySelector(".cart-sidebar");
+  const itemsContainer = sidebar?.querySelector(".cart-items");
+  const totalContainer = sidebar?.querySelector(".cart-total span");
   if (!sidebar || !itemsContainer) return;
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  itemsContainer.innerHTML = '';
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  itemsContainer.innerHTML = "";
   let total = 0;
-  cart.forEach(item => {
-    const itemDiv = document.createElement('div');
-    itemDiv.className = 'cart-item';
+  cart.forEach((item) => {
+    const itemDiv = document.createElement("div");
+    itemDiv.className = "cart-item";
     itemDiv.innerHTML = `
       <img src="assets/images/products/${item.image}" class="cart-item-img" alt="${item.name}">
       <div class="cart-item-info">
@@ -207,21 +215,21 @@ export function renderCartSidebar() {
       </div>
       <button class="cart-item-remove" title="Remove">&times;</button>
     `;
-    itemDiv.querySelector('.cart-item-remove').onclick = () => {
-      cart = cart.filter(c => c.id !== item.id);
-      localStorage.setItem('cart', JSON.stringify(cart));
+    itemDiv.querySelector(".cart-item-remove").onclick = () => {
+      cart = cart.filter((c) => c.id !== item.id);
+      localStorage.setItem("cart", JSON.stringify(cart));
       renderCartSidebar();
       updateCartBadge();
     };
     itemsContainer.appendChild(itemDiv);
-    total += (item.price * item.qty);
+    total += item.price * item.qty;
   });
   if (totalContainer) totalContainer.textContent = `$${total.toFixed(2)}`;
 }
 
 // Update cart sidebar on cart change
-window.addEventListener('storage', (e) => {
-  if (e.key === 'cart') renderCartSidebar();
+window.addEventListener("storage", (e) => {
+  if (e.key === "cart") renderCartSidebar();
 });
 
 // Call on load

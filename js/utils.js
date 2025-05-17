@@ -1,3 +1,11 @@
+/*
+     Project: Notes App
+     Author: Yabsira Dejene
+     GitHub: https://github.com/ELFAZ19
+     LinkedIn: https://linkedin.com/in/yabsiradejene
+     © 2025 Yabsira Dejene. All rights reserved.
+*/
+
 // Theme functionality
 export function loadTheme() {
   const savedTheme = localStorage.getItem("theme") || "light";
